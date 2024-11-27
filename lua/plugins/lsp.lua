@@ -13,7 +13,8 @@ return {
 			ensure_installed = {
 				"clangd",
 				"lua_ls",
-				"mesonlsp"
+				"mesonlsp",
+				"pylsp"
 			}
 		},
 		config = true
@@ -65,6 +66,7 @@ return {
 			lspconfig.clangd.setup({})
 			lspconfig.lua_ls.setup({})
 			lspconfig.mesonlsp.setup({})
+			lspconfig.pylsp.setup({})
 		end
 	}
 }
