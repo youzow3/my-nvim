@@ -13,8 +13,10 @@ return {
 			ensure_installed = {
 				"clangd",
 				"lua_ls",
+				"marksman",
 				"mesonlsp",
-				"pylsp"
+				"pylsp",
+				"rust_analyzer"
 			}
 		},
 		config = true
@@ -65,8 +67,10 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.clangd.setup({})
 			lspconfig.lua_ls.setup({})
+			lspconfig.marksman.setup({})
 			lspconfig.mesonlsp.setup({})
 			lspconfig.pylsp.setup({})
+			lspconfig.rust_analyzer.setup({})
 		end
 	}
 }
