@@ -6,4 +6,5 @@ home_dir = vim.env.HOME
 vim.opt.backupdir = home_dir .. "/backup/nvim"
 
 require("config.lazy")
+require("config.keymap")
 
