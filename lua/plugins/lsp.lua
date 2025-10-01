@@ -60,18 +60,6 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/nvim-cmp"
-	},
-	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			local lspconfig = require("lspconfig")
-			lspconfig.clangd.setup({})
-			lspconfig.lua_ls.setup({})
-			lspconfig.marksman.setup({})
-			lspconfig.mesonlsp.setup({})
-			lspconfig.pylsp.setup({})
-			lspconfig.rust_analyzer.setup({})
-		end
 	}
 }
 
