@@ -1,26 +1,30 @@
+-- manual LSP setup
+
+vim.lsp.config["clangd"] = {
+	cmd = {'clangd'},
+	-- C: c
+	-- C++: cc, cpp
+	-- CUDA: cu
+	filetypes = {"c", "cc", "cpp", "cu"},
+	root_markers = {".git", {"meson.build", "CMakeLists.txt"}}
+}
+
+vim.lsp.config["python-lsp-server"] = {
+	cmd = {"pylsp"},
+	filetypes = {"python"},
+	root_markers = {".git", ".venv"}
+}
+
+vim.lsp.config["marksman"] = {
+	cmd = {"marksman", "server"},
+	filetypes = {"markdown"},
+}
+
+vim.lsp.enable("clangd")
+vim.lsp.enable("python-lsp-server")
+vim.lsp.enable("marksman")
+
 return {
-	{
-		"williamboman/mason.nvim",
-		config = true
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"neovim/nvim-lspconfig"
-		},
-		opts = {
-			ensure_installed = {
-				"clangd",
-				"lua_ls",
-				"marksman",
-				"mesonlsp",
-				"pylsp",
-				"rust_analyzer"
-			}
-		},
-		config = true
-	},
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
