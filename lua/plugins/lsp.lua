@@ -2,10 +2,7 @@
 
 vim.lsp.config["clangd"] = {
 	cmd = {'clangd'},
-	-- C: c
-	-- C++: cc, cpp
-	-- CUDA: cu
-	filetypes = {"c", "cc", "cpp", "cu"},
+	filetypes = {"c", "cpp", "cuda"},
 	root_markers = {".git", {"meson.build", "CMakeLists.txt"}}
 }
 
@@ -20,9 +17,16 @@ vim.lsp.config["marksman"] = {
 	filetypes = {"markdown"},
 }
 
+vim.lsp.config["rust-analyzer"] = {
+	cmd = {"rust-analyzer"},
+	filetypes = {"rust"},
+	root_markers = {".git", {"cargo.toml", "Cargo.toml"}}
+}
+
 vim.lsp.enable("clangd")
 vim.lsp.enable("python-lsp-server")
 vim.lsp.enable("marksman")
+vim.lsp.enable("rust-analyzer")
 
 return {
 	{
